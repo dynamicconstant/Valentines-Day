@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     const music = document.getElementById('background-music');
 
-    // Play music only after user interaction (fixes autoplay block)
+    // Play music only after user interacts with the page
     document.body.addEventListener('click', function () {
         if (music.paused) {
             music.play().catch(error => console.log("Autoplay blocked: " + error));
@@ -24,15 +24,15 @@ function playMusic() {
 // Function to handle button click events
 function selectOption(option) {
     if (option === 'yes') {
-        flashRainbowColors(function() {
+        flashRainbowColors(function () {
             document.getElementById('question').style.display = 'none'; // Hide the question
             displayDog(); // Display the dog.gif
         });
     } else if (option === 'no') {
         document.getElementById('no-button').innerText = 'You sure?'; 
-        var yesButton = document.getElementById('yes-button');
-        var currentFontSize = window.getComputedStyle(yesButton).getPropertyValue('font-size');
-        var newSize = parseFloat(currentFontSize) * 2; // Double the font size
+        const yesButton = document.getElementById('yes-button');
+        const currentFontSize = window.getComputedStyle(yesButton).getPropertyValue('font-size');
+        const newSize = parseFloat(currentFontSize) * 2; // Double the font size
         yesButton.style.fontSize = newSize + 'px';
     } else {
         alert('Invalid option!');
@@ -41,15 +41,15 @@ function selectOption(option) {
 
 // Function to flash rainbow colors
 function flashRainbowColors(callback) {
-    var colors = ['#ff0000', '#ff7f00', '#ffff00', '#00ff00', '#0000ff', '#4b0082', '#9400d3'];
-    var i = 0;
-    var interval = setInterval(function() {
+    const colors = ['#ff0000', '#ff7f00', '#ffff00', '#00ff00', '#0000ff', '#4b0082', '#9400d3'];
+    let i = 0;
+    const interval = setInterval(function () {
         document.body.style.backgroundColor = colors[i];
         i = (i + 1) % colors.length;
     }, 200);
-    setTimeout(function() {
+    setTimeout(function () {
         clearInterval(interval);
-        document.body.style.backgroundColor = '';
+        document.body.style.backgroundColor = ''; // Reset background color
         if (callback) {
             callback();
         }
@@ -69,14 +69,14 @@ function displayBenji() {
 
 // Function to display dog.gif when "Yes" is clicked
 function displayDog() {
-    document.getElementById('image-container').innerHTML = '';
     const imageContainer = document.getElementById('image-container');
+    imageContainer.innerHTML = ''; // Clear existing content
     const dogImage = new Image();
     dogImage.src = 'dog.gif';
     dogImage.alt = 'Dog with Heart';
     dogImage.onload = function () {
         imageContainer.appendChild(dogImage);
-        document.getElementById('options').style.display = 'none';
+        document.getElementById('options').style.display = 'none'; // Hide options
     };
 }
 
