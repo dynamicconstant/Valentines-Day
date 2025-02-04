@@ -1,5 +1,4 @@
-/* style.css */
-
+/* General Body Styles */
 body {
     font-family: Arial, sans-serif; /* Fallback font family */
     text-align: center; /* Center-align text */
@@ -15,15 +14,27 @@ body {
     height: 100vh; /* Make the container full viewport height */
 }
 
+/* Center and Style the Image */
 #image-container {
-    /* This container will hold the images */
+    display: flex; /* Flexbox for centering */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    flex-direction: column; /* Stack the image and other elements vertically */
+    margin-bottom: 20px; /* Space below the GIF */
 }
 
+#image-container img {
+    width: 200px; /* Resize the GIF to a fixed width */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Question Styling */
 #question {
     font-family: 'Sacramento', cursive; /* Apply Sacramento font to the question */
     font-size: 52px; /* Set font size for the question */
 }
 
+/* Options Section Styling */
 #options {
     margin-top: 20px; /* Add space above the options */
 }
