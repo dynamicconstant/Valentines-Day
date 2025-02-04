@@ -1,80 +1,83 @@
 /* General Body Styles */
 body {
-    font-family: Arial, sans-serif; /* Fallback font family */
-    text-align: center; /* Center-align text */
-    margin: 0; /* Remove default margin */
-    background-color: #FADADD; /* Set background color to light pink */
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    background-color: #FADADD;
 }
 
 /* Main Container */
 #container {
-    display: flex; /* Use flexbox layout */
-    flex-direction: column; /* Stack elements vertically */
-    align-items: center; /* Center-align items horizontally */
-    justify-content: center; /* Center-align items vertically */
-    height: 100vh; /* Make the container full viewport height */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
 }
 
-/* Center the Image and Resize */
+/* Image Container */
 #image-container {
-    display: flex; /* Flexbox for centering */
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    flex-direction: column; /* Stack the image and other elements vertically */
-    margin-bottom: 20px; /* Space below the GIF */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 20px;
 }
 
 #image-container img {
-    width: 200px; /* Resize the GIF to a fixed width */
-    height: auto; /* Maintain aspect ratio */
+    width: 200px;
+    height: auto;
 }
 
-/* Question Styling */
+/* Question */
 #question {
-    font-family: 'Sacramento', cursive; /* Apply Sacramento font to the question */
-    font-size: 52px; /* Set font size for the question */
-    color: #333; /* Dark text color */
+    font-family: 'Sacramento', cursive;
+    font-size: 52px;
+    color: #333;
 }
 
-/* Options Section Styling */
-#options {
-    margin-top: 20px; /* Add space above the options */
-}
-
-/* Buttons Styling */
+/* Options Buttons */
 button {
-    padding: 10px 20px; /* Set padding for buttons */
-    margin: 0 10px; /* Set margin around buttons */
-    font-size: 26px; /* Set font size for buttons */
-    font-family: 'Sacramento', cursive; /* Apply Sacramento font to the options */
-    background-color: #FB607F; /* Set button background color */
-    color: white; /* Set text color to white */
-    border: none; /* Remove button border */
-    border-radius: 8px; /* Add rounded corners */
-    cursor: pointer; /* Set cursor to pointer on hover */
-    transition: transform 0.2s ease; /* Add smooth scaling effect */
+    padding: 10px 20px;
+    margin: 0 10px;
+    font-size: 26px;
+    font-family: 'Sacramento', cursive;
+    background-color: #FB607F;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
 }
 
-/* Hover Effects for Buttons */
 button:hover {
-    transform: scale(1.1); /* Slightly enlarge button on hover */
+    transform: scale(1.1);
 }
 
 /* Music Controls */
 #music-controls {
-    margin-top: 30px; /* Space above music controls */
+    margin-top: 30px;
 }
 
 #music-controls button {
-    font-size: 18px; /* Smaller button font size for music controls */
-    padding: 8px 15px; /* Adjust padding for music buttons */
-    background-color: #FFB6C1; /* Light pink background */
-    color: #333; /* Dark text color */
-    border-radius: 5px; /* Rounded corners */
-    border: 1px solid #ddd; /* Light border */
-    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 18px;
+    padding: 8px 15px;
+    background-color: #FFB6C1;
+    color: #333;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    cursor: pointer;
 }
 
 #music-controls button:hover {
-    background-color: #FF7F7F; /* Darker pink on hover */
+    background-color: #FF7F7F;
+}
+
+/* Love Message */
+#love-message {
+    margin-top: 20px;
+    font-family: 'Sacramento', cursive;
+    font-size: 36px;
+    color: #FB607F;
+    text-align: center;
 }
