@@ -1,5 +1,3 @@
-// Updated script.js
-
 // Function to handle button click events
 function selectOption(option) {
     if (option === 'yes') {
@@ -41,27 +39,39 @@ function flashRainbowColors(callback) {
 
 // Function to display the benji.gif initially
 function displayBenji() {
-    var imageContainer = document.getElementById('image-container');
-    var benjiImage = new Image();
-    benjiImage.src = 'benji.gif'; // Path to benji.gif
+    const imageContainer = document.getElementById('image-container'); // Select the image container
+    const benjiImage = new Image(); // Create a new image element
+    benjiImage.src = 'benji.gif'; // Path to the Benji GIF
     benjiImage.alt = 'Benji';
-    benjiImage.onload = function() {
-        imageContainer.appendChild(benjiImage);
+    benjiImage.onload = function () {
+        imageContainer.appendChild(benjiImage); // Append the image to the container
     };
 }
 
 // Function to display the dog.gif when "Yes" is clicked
 function displayDog() {
     document.getElementById('image-container').innerHTML = ''; // Clear existing content
-    var imageContainer = document.getElementById('image-container');
-    var dogImage = new Image();
-    dogImage.src = 'dog.gif'; // Path to dog.gif
+    const imageContainer = document.getElementById('image-container');
+    const dogImage = new Image();
+    dogImage.src = 'dog.gif'; // Path to the Dog GIF
     dogImage.alt = 'Dog with Heart';
-    dogImage.onload = function() {
+    dogImage.onload = function () {
         imageContainer.appendChild(dogImage);
         document.getElementById('options').style.display = 'none'; // Hide options
     };
 }
 
-// Display the benji.gif initially
+// Function to mute background music
+function muteMusic() {
+    const music = document.getElementById('background-music');
+    music.muted = true;
+}
+
+// Function to play/unmute background music
+function playMusic() {
+    const music = document.getElementById('background-music');
+    music.muted = false;
+}
+
+// Display the Benji GIF initially when the page loads
 displayBenji();
