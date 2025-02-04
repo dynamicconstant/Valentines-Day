@@ -6,6 +6,7 @@ body {
     background-color: #FADADD; /* Set background color to light pink */
 }
 
+/* Main Container */
 #container {
     display: flex; /* Use flexbox layout */
     flex-direction: column; /* Stack elements vertically */
@@ -14,7 +15,7 @@ body {
     height: 100vh; /* Make the container full viewport height */
 }
 
-/* Center and Style the Image */
+/* Center the Image and Resize */
 #image-container {
     display: flex; /* Flexbox for centering */
     justify-content: center; /* Center horizontally */
@@ -32,6 +33,7 @@ body {
 #question {
     font-family: 'Sacramento', cursive; /* Apply Sacramento font to the question */
     font-size: 52px; /* Set font size for the question */
+    color: #333; /* Dark text color */
 }
 
 /* Options Section Styling */
@@ -39,6 +41,7 @@ body {
     margin-top: 20px; /* Add space above the options */
 }
 
+/* Buttons Styling */
 button {
     padding: 10px 20px; /* Set padding for buttons */
     margin: 0 10px; /* Set margin around buttons */
@@ -47,5 +50,31 @@ button {
     background-color: #FB607F; /* Set button background color */
     color: white; /* Set text color to white */
     border: none; /* Remove button border */
+    border-radius: 8px; /* Add rounded corners */
     cursor: pointer; /* Set cursor to pointer on hover */
+    transition: transform 0.2s ease; /* Add smooth scaling effect */
+}
+
+/* Hover Effects for Buttons */
+button:hover {
+    transform: scale(1.1); /* Slightly enlarge button on hover */
+}
+
+/* Music Controls */
+#music-controls {
+    margin-top: 30px; /* Space above music controls */
+}
+
+#music-controls button {
+    font-size: 18px; /* Smaller button font size for music controls */
+    padding: 8px 15px; /* Adjust padding for music buttons */
+    background-color: #FFB6C1; /* Light pink background */
+    color: #333; /* Dark text color */
+    border-radius: 5px; /* Rounded corners */
+    border: 1px solid #ddd; /* Light border */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+#music-controls button:hover {
+    background-color: #FF7F7F; /* Darker pink on hover */
 }
