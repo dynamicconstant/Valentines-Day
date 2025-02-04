@@ -8,6 +8,12 @@
     <link rel="stylesheet" href="style.css"> <!-- Link to external stylesheet -->
 </head>
 <body>
+    <!-- Audio player for background music -->
+    <audio id="background-music" autoplay loop>
+        <source src="ap-dhillon-official-audio.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
     <div id="container">
         <div id="image-container"></div> <!-- Container for displaying images -->
         <div id="text-container">
@@ -17,6 +23,12 @@
                 <button id="no-button" onclick="selectOption('no')">No</button> <!-- No button -->
             </div>
         </div>
+    </div>
+
+    <!-- Music Controls -->
+    <div id="music-controls">
+        <button onclick="muteMusic()">Mute</button>
+        <button onclick="playMusic()">Play</button>
     </div>
 
     <script src="script.js"></script> <!-- Link to external JavaScript file -->
