@@ -14,6 +14,12 @@
         Your browser does not support the audio element.
     </audio>
 
+    <!-- Music Controls (Moved higher on the page) -->
+    <div id="music-controls">
+        <button onclick="muteMusic()">Mute</button>
+        <button onclick="playMusic()">Play</button>
+    </div>
+
     <div id="container">
         <div id="image-container"></div> <!-- Container for displaying images -->
         <div id="text-container">
@@ -23,12 +29,6 @@
                 <button id="no-button" onclick="selectOption('no')">No</button> <!-- No button -->
             </div>
         </div>
-    </div>
-
-    <!-- Music Controls -->
-    <div id="music-controls">
-        <button onclick="muteMusic()">Mute</button>
-        <button onclick="playMusic()">Play</button>
     </div>
 
     <script src="script.js"></script> <!-- Link to external JavaScript file -->
