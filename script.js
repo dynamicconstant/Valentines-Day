@@ -11,12 +11,8 @@ const noButtonMessages = [
 document.addEventListener('DOMContentLoaded', function () {
     const music = document.getElementById('background-music');
 
-    // Play music only after user interacts with the page
-    document.body.addEventListener('click', function () {
-        if (music.paused) {
-            music.play().catch(error => console.log("Autoplay blocked: " + error));
-        }
-    });
+    // Play music as soon as the website loads
+    music.play().catch(error => console.log("Autoplay blocked: " + error));
 });
 
 // Function to mute background music
@@ -29,6 +25,7 @@ function muteMusic() {
 function playMusic() {
     const music = document.getElementById('background-music');
     music.muted = false;
+    music.play().catch(error => console.log("Failed to play music: " + error));
 }
 
 // Function to handle button click events
