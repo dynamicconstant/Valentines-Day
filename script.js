@@ -1,3 +1,13 @@
+// Track the "No" button clicks
+let noButtonClickCount = 0;
+
+// Array of messages to display on the "No" button
+const noButtonMessages = [
+    "You sure?",
+    "Please, I'll cry.",
+    "I thought you loved me!"
+];
+
 document.addEventListener('DOMContentLoaded', function () {
     const music = document.getElementById('background-music');
 
@@ -26,16 +36,27 @@ function selectOption(option) {
     if (option === 'yes') {
         flashRainbowColors(function () {
             document.getElementById('question').style.display = 'none'; // Hide the question
-            displayDog(); // Display the dog.gif
+            displayDog(); // Display the dog.gif and the message
         });
     } else if (option === 'no') {
-        document.getElementById('no-button').innerText = 'You sure?'; 
+        updateNoButtonMessage(); // Change the "No" button message
         const yesButton = document.getElementById('yes-button');
         const currentFontSize = window.getComputedStyle(yesButton).getPropertyValue('font-size');
         const newSize = parseFloat(currentFontSize) * 2; // Double the font size
         yesButton.style.fontSize = newSize + 'px';
     } else {
         alert('Invalid option!');
+    }
+}
+
+// Function to update the "No" button message
+function updateNoButtonMessage() {
+    const noButton = document.getElementById('no-button');
+    if (noButtonClickCount < noButtonMessages.length) {
+        noButton.innerText = noButtonMessages[noButtonClickCount];
+        noButtonClickCount++;
+    } else {
+        noButton.innerText = noButtonMessages[noButtonMessages.length - 1]; // Keep the last message
     }
 }
 
@@ -76,6 +97,13 @@ function displayDog() {
     dogImage.alt = 'Dog with Heart';
     dogImage.onload = function () {
         imageContainer.appendChild(dogImage);
+
+        // Add the message under the Dog GIF
+        const loveMessage = document.createElement('div');
+        loveMessage.id = 'love-message';
+        loveMessage.innerText = 'I love you my Mahi';
+        imageContainer.appendChild(loveMessage);
+
         document.getElementById('options').style.display = 'none'; // Hide options
     };
 }
